@@ -1,10 +1,28 @@
-{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
 
-{% block content %}
-  <h1>Upload de arquivo PDF</h1>
-  <form action="{% url 'upload_arquivo' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Enviar</button>
-  </form>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="/">The Breakfast Group</a>
+    </nav>
+    <main>
+      {% block content %}
+      <h1>Upload de arquivo PDF</h1>
+      <form class="form-upload" action="{% url 'upload_arquivo' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+      </form>
+    {% endblock %}
+    </main>
+    <footer class="footer">
+      <p>&copy; {{ year }} - The Breakfast Group</p>
+    </footer>
+  </body>
+</html>

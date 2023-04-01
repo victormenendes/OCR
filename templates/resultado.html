@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Resultado</h1>
-  <p>{{ texto }}</p>
-
-    <h1>Texto Extraído:</h1>
-<textarea name="texto_extraido" id="texto_extraido" rows="10">{{ texto }}</textarea>
-
+  <div class="result-container">
+    <div class="result">
+      <h1>Resultado</h1>
+      <p>{{ texto }}</p>
+    </div>
+    <div class="extracted-text">
+      <h1>Texto Extraído:</h1>
+      <textarea name="texto_extraido" id="texto_extraido" rows="10">{{ texto }}</textarea>
+    </div>
+  </div>
 {% endblock %}
