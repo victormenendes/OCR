@@ -5,6 +5,6 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Analyze image</button>
+    <button type="submit" href="analysis-results/">Analyze image</button>
   </form>
 {% endblock %}
