@@ -1,0 +1,4 @@
+venv/
+ocr/__pycache__
+djangoProject2/__pycache__
+ocr/migrations/__pycache__
