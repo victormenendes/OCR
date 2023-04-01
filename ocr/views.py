@@ -1,7 +1,7 @@
 from .forms import ArquivoForm
 import os
 import PyPDF2
-
+import re
 
 from django.shortcuts import render
 
@@ -27,6 +27,16 @@ def upload_arquivo(request):
     return render(request, 'formulario.html', {'form': form})
 
 
+def extrair_numeros(texto):
+    padrao = r'\b\d{07}\b'
+    numeros = []
+    matches = re.findall(padrao, texto)
+    for match in matches:
+        numeros.append(match)
+    return numeros
+
+
+
 def extrair_texto(caminho_arquivo):
     with open(caminho_arquivo, 'rb') as arquivo:
         leitor_pdf = PyPDF2.PdfReader(arquivo)
@@ -34,7 +44,8 @@ def extrair_texto(caminho_arquivo):
         texto = ''
         for pagina in range(num_paginas):
             texto += leitor_pdf.pages[pagina].extract_text()
-    return texto
+    numeros = extrair_numeros(texto)
+    return numeros
 
 
 
