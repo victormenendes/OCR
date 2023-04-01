@@ -1,10 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
 from .forms import ArquivoForm
 import os
-import tensorflow as tf
-from PIL import Image
-import pytesseract
+import PyPDF2
+
+
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'base.html')
+
 
 def upload_arquivo(request):
     if request.method == 'POST':
@@ -23,7 +26,17 @@ def upload_arquivo(request):
         form = ArquivoForm()
     return render(request, 'formulario.html', {'form': form})
 
+
 def extrair_texto(caminho_arquivo):
-    imagem = Image.open(caminho_arquivo)
-    texto = pytesseract.image_to_string(imagem, lang='por')
+    with open(caminho_arquivo, 'rb') as arquivo:
+        leitor_pdf = PyPDF2.PdfReader(arquivo)
+        num_paginas = len(leitor_pdf.pages)
+        texto = ''
+        for pagina in range(num_paginas):
+            texto += leitor_pdf.pages[pagina].extract_text()
     return texto
+
+
+
+
+
