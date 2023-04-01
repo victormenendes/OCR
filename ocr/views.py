@@ -40,3 +40,5 @@ def extrair_texto(caminho_arquivo):
 
 
 
+
+
