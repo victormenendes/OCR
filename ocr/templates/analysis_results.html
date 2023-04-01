@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Image analysis results</h1>
+  <ul>
+    {% for label in labels %}
+      <li>{{ label.description }} ({{ label.score }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
