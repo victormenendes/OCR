@@ -1,0 +1,162 @@
+:root {
+  --bg-header: #333;
+  --bg-footer: #222;
+}
+
+/* Estilização para o header e navbar */
+header, .navbar {
+  background-color: var(--bg-header);
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.navbar {
+  height: 50px;
+}
+
+.navbar-brand, header h1 {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+header nav ul, .navbar-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li, .navbar-nav li {
+  margin-right: 20px;
+}
+
+header nav ul li:first-child, .navbar-nav li:first-child {
+  margin-right: auto;
+}
+
+header nav ul li a, .navbar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+header nav ul li a:hover, .navbar-nav li a:hover {
+  color: #f1c40f;
+}
+
+/* Estilização para o botão de upload */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  }
+  
+.form-upload {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form-upload label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-upload input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.form-upload button[type="submit"] {
+  background-color: #428bca;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-upload button[type="submit"]:hover {
+  background-color: #3071a9;
+}
+/* Estilização para os botões do footer */
+footer {
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: var(--bg-footer);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.home-btn, .navbar-brand {
+  color: white;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.home-btn:hover, .navbar-brand:hover {
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.upload-btn {
+  background-color: #fcd057;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 40px;
+  margin: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.upload-btn:hover {
+  background-color: #fbc531;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result {
+  order: 1;
+}
+
+.extracted-text {
+  order: 2;
+  margin-top: 20px;
+}
