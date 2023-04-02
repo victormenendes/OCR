@@ -115,6 +115,7 @@ footer {
 
 .upload-btn {
   background-color: #fcd057;
+  text-decoration: none;
   color: white;
   font-size: 24px;
   font-weight: bold;

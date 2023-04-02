@@ -12,6 +12,7 @@ def index(request):
 def upload_arquivo(request):
     if request.method == 'POST':
         form = ArquivoForm(request.POST, request.FILES)
+        print(f'formulário: {form}')
         if form.is_valid():
             arquivo = request.FILES['arquivo']
             caminho_arquivo = 'media/' + arquivo.name
